@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Task 2.5 Weather API</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="main-container">
+        <div class="search">
+          <input type="text" placeholder="Search..." class="search__text" />
+          <i class="fa-solid fa-xmark"></i>
+          <span>Selected: </span>
+          <span class="search__selected">Loading...</span>
+        </div>
+
+        <div class="weather _hidden">
+          <div class="present">
+            <div class="present__column">
+              <h2 class="present__temperature" data-present="temp">-5&#8451</h2>
+              <span class="present__feels-tempetarure"  data-present="feels_like">Feels like -8&#8451</span>
+            </div>
+            <div class="present__column">
+              <span class="present__sky"  data-present="main">Cloudy</span>
+              <span class="present__city"  data-present="name">Ukraine, Odessa</span>
+            </div>
+            <div class="present__column present__column_img">
+              <img class="present__img"  data-present="icon" src="http://openweathermap.org/img/wn/10d@2x.png"/></img>
+            </div>
+          </div>
+
+          <div class="forecast">        
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./js/api.js"></script>
+</html>

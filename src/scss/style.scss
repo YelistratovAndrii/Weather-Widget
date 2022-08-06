@@ -1,0 +1,147 @@
+@import './styles/base/reset';
+@import './styles/base/utilities';
+@import './styles/base/variables';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+._hidden {
+  display: none;
+}
+
+.wrapper {
+  background-color: $colorBlue;
+  border: 1px solid $colorBlue;
+  min-height: 100vh;
+}
+
+.main-container {
+  margin: 100px auto 100px;
+  width: 500px;
+}
+
+.search {
+  position: relative;
+  margin-bottom: 40px;
+
+  & > input {
+    box-sizing: border-box;
+    background-color: $colorWhite;
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 5px 20px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+
+  & > i {
+    position: absolute;
+    font-size: 1.6rem;
+    color: grey;
+    right: 20px;
+    top: 5px;
+    cursor: pointer;
+  }
+
+  & > span {
+    color: $colorDarker;
+
+    &:first-of-type {
+      font-weight: 300;
+    }
+
+    &:nth-of-type(2) {
+      font-weight: 600;
+    }
+  }
+}
+
+.weather {
+  color: $colorWhite;
+}
+
+.present {
+  border: 1px solid $colorDarker;
+  border-radius: 15px 15px 0 0;
+  background-color: $colorDarker;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 40px 0;
+
+  @include e(column) {
+    display: flex;
+    flex-direction: column;
+
+    & :first-child {
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    & :last-child {
+      margin-bottom: 0;
+    }
+
+    @include m(img) {
+      width: 100px;
+      height: 100px;
+
+      & > img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  @include e(temperature) {
+    font-size: 2.3rem;
+    margin: 0;
+  }
+}
+
+.forecast {
+  border: 1px solid $colorDark;
+  border-radius: 0 0 15px 15px;
+  background-color: $colorDark;
+}
+
+.forecast-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px 0;
+
+  &:first-of-type {
+    padding: 80px 0 10px;
+  }
+
+  @include e(day) {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+  }
+
+  @include e(img) {
+    width: 100px;
+    height: 100px;
+
+    & > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @include e(min-max) {
+    display: flex;
+    flex-direction: column;
+
+    & :first-child {
+      margin-bottom: 10px;
+    }
+  }
+}

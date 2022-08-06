@@ -1,0 +1,44 @@
+@function em($target, $current: $baseFontSize) {
+    @return ($target / $current) * 1em;
+  }
+  
+  @function rem($target) {
+    @return ($target / $baseFontSize) * 1rem;
+  }
+  
+  @mixin invis {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+  
+  @mixin e($element) {
+    &__#{$element} {
+      @content;
+    }
+  }
+  
+  @mixin m($modifier) {
+    &_#{$modifier} {
+      @content;
+    }
+  }
+  
+  @mixin mq($width) {
+    @media (min-width: $width) {
+      @content;
+    }
+  }
+  
+  @mixin noselect() {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+
+  
